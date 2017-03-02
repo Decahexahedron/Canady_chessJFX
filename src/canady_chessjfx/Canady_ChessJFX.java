@@ -81,6 +81,7 @@ public class Canady_ChessJFX extends Application {
             bbb[p.getX()][p.getY()].setOnAction(new EventHandler<ActionEvent>() { //button action
                 @Override
                 public void handle(ActionEvent event) {
+                    resetBoard(bbb);
                     p.display(bbb);
                 }
             });
@@ -89,21 +90,16 @@ public class Canady_ChessJFX extends Application {
             bbb[p.getX()][p.getY()].setOnAction(new EventHandler<ActionEvent>() { //button action
                 @Override
                 public void handle(ActionEvent event) {
+                    resetBoard(bbb);
                     p.display(bbb);
                 }
             });
         }
-//        btn.setOnAction(new EventHandler<ActionEvent>() { //button action
-//            @Override
-//            public void handle(ActionEvent event) {
-//            }
-//        });
         primaryStage.setTitle(
                 "Chess"); //make window
         primaryStage.setScene(scene);
         primaryStage.show();
         chess();
-
     }
 
     public static void main(String[] args) {
@@ -119,6 +115,41 @@ public class Canady_ChessJFX extends Application {
 //            c++;
 //            p = (c % 2) + 1;
 //        }
+    }
+
+    public static void initPieces() {
+        wking = new King(0, 3, "w");
+        bking = new King(7, 4, "b");
+        wqueen = new Queen(0, 4, "w");
+        bqueen = new Queen(7, 3, "b");
+        wknight1 = new Knight(0, 1, "w");
+        wknight2 = new Knight(0, 6, "w");
+        bknight1 = new Knight(7, 1, "b");
+        bknight2 = new Knight(7, 6, "b");
+        wbishop1 = new Bishop(0, 2, "w");
+        wbishop2 = new Bishop(0, 5, "w");
+        bbishop1 = new Bishop(7, 2, "b");
+        bbishop2 = new Bishop(7, 5, "b");
+        wrook1 = new Rook(0, 0, "w");
+        wrook2 = new Rook(0, 7, "w");
+        brook1 = new Rook(7, 0, "b");
+        brook2 = new Rook(7, 7, "b");
+        wpawn1 = new Pawn(1, 0, "w");
+        wpawn2 = new Pawn(1, 1, "w");
+        wpawn3 = new Pawn(1, 2, "w");
+        wpawn4 = new Pawn(1, 3, "w");
+        wpawn5 = new Pawn(1, 4, "w");
+        wpawn6 = new Pawn(1, 5, "w");
+        wpawn7 = new Pawn(1, 6, "w");
+        wpawn8 = new Pawn(1, 7, "w");
+        bpawn1 = new Pawn(6, 0, "b");
+        bpawn2 = new Pawn(6, 1, "b");
+        bpawn3 = new Pawn(6, 2, "b");
+        bpawn4 = new Pawn(6, 3, "b");
+        bpawn5 = new Pawn(6, 4, "b");
+        bpawn6 = new Pawn(6, 5, "b");
+        bpawn7 = new Pawn(6, 6, "b");
+        bpawn8 = new Pawn(6, 7, "b");
     }
 
     static void assign() {
@@ -156,38 +187,15 @@ public class Canady_ChessJFX extends Application {
         blist.add(bpawn8);
     }
 
-    public static void initPieces() {
-        wking = new King(0, 3, "w");
-        bking = new King(7, 4, "b");
-        wqueen = new Queen(0, 4, "w");
-        bqueen = new Queen(7, 3, "b");
-        wknight1 = new Knight(0, 1, "w");
-        wknight2 = new Knight(0, 6, "w");
-        bknight1 = new Knight(7, 1, "b");
-        bknight2 = new Knight(7, 6, "b");
-        wbishop1 = new Bishop(0, 2, "w");
-        wbishop2 = new Bishop(0, 5, "w");
-        bbishop1 = new Bishop(7, 2, "b");
-        bbishop2 = new Bishop(7, 5, "b");
-        wrook1 = new Rook(0, 0, "w");
-        wrook2 = new Rook(0, 7, "w");
-        brook1 = new Rook(7, 0, "b");
-        brook2 = new Rook(7, 7, "b");
-        wpawn1 = new Pawn(1, 0, "w");
-        wpawn2 = new Pawn(1, 1, "w");
-        wpawn3 = new Pawn(1, 2, "w");
-        wpawn4 = new Pawn(1, 3, "w");
-        wpawn5 = new Pawn(1, 4, "w");
-        wpawn6 = new Pawn(1, 5, "w");
-        wpawn7 = new Pawn(1, 6, "w");
-        wpawn8 = new Pawn(1, 7, "w");
-        bpawn1 = new Pawn(6, 0, "b");
-        bpawn2 = new Pawn(6, 1, "b");
-        bpawn3 = new Pawn(6, 2, "b");
-        bpawn4 = new Pawn(6, 3, "b");
-        bpawn5 = new Pawn(6, 4, "b");
-        bpawn6 = new Pawn(6, 5, "b");
-        bpawn7 = new Pawn(6, 6, "b");
-        bpawn8 = new Pawn(6, 7, "b");
+    static void resetBoard(Button[][] bbb) {
+        for (Piece p : wlist) {
+            bbb[p.getX()][p.getY()].setTextFill(Color.BLACK);
+            bbb[p.getX()][p.getY()].setText(Character.toString(p.getSymbol()));
+        }
+        for (Piece p : blist) {
+            bbb[p.getX()][p.getY()].setTextFill(Color.BLACK);
+            bbb[p.getX()][p.getY()].setText(Character.toString(p.getSymbol()));
+        }
     }
+
 }

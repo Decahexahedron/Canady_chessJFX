@@ -1,9 +1,14 @@
 package canady_chessjfx;
 
 import javafx.scene.control.*;
+import javafx.scene.paint.Color;
 
 public class Piece {
 
+    public static final String ANSI_RESET = "\u001B[0m";
+    public static final String ANSI_BLACK = "\u001B[30m";
+    public static final String ANSI_RED = "\u001B[31m";
+    public static final String ANSI_GREEN = "\u001B[32m";
     private int x, y;
     private int a, b;
     private char symbol;
@@ -58,4 +63,5 @@ public class Piece {
     public boolean check(Piece p, int cx, int cy) {
         return cx == p.getX() && cy == p.getY();
     }
+
 }
