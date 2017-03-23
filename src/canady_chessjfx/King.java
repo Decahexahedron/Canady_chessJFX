@@ -37,8 +37,13 @@ public class King extends Piece {
     }
 
     @Override
+    public String getColor() {
+        return this.color;
+    }
+
+    @Override
     public void move(int ax, int ay) {
-        this.setX(this.x + (ax * a));
-        this.setY(this.y + (ay * b));
+        this.setX(ax);
+        this.setY(ay);
     }
 }

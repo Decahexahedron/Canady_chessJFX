@@ -1,5 +1,6 @@
 package canady_chessjfx;
 
+import javafx.event.*;
 import javafx.scene.control.*;
 import javafx.scene.paint.Color;
 
@@ -37,9 +38,14 @@ public class Knight extends Piece {
     }
 
     @Override
+    public String getColor() {
+        return this.color;
+    }
+
+    @Override
     public void move(int ax, int ay) {
-        this.setX(this.x + (ax * a));
-        this.setY(this.y + (ay * b));
+        this.x = ax;
+        this.y = ay;
     }
 
     @Override
@@ -110,137 +116,282 @@ public class Knight extends Piece {
 
             if (this.x > 1) { // top ones
                 if (this.y > 0) {
+                    int cx = this.x - 2;
+                    int cy = this.y - 1;
                     if (ppp[1][0]) {
-                        bbb[this.x - 2][this.y - 1].setTextFill(Color.GREEN);
+                        bbb[cx][cy].setTextFill(Color.GREEN);
                     } else if (!ppp[0][0]) {
-                        bbb[this.x - 2][this.y - 1].setText("o");
+                        bbb[cx][cy].setOnAction(new EventHandler<ActionEvent>() { //button action
+                            @Override
+                            public void handle(ActionEvent event) {
+                                move(cx, cy);
+                                Canady_ChessJFX.resetBoard(bbb);
+                            }
+                        });
+                        bbb[cx][cy].setText("o");
                     }
                 }
                 if (this.y < 7) {
+                    int cx = this.x - 2;
+                    int cy = this.y + 1;
                     if (ppp[1][1]) {
-                        bbb[this.x - 2][this.y + 1].setTextFill(Color.GREEN);
+                        bbb[cx][cy].setTextFill(Color.GREEN);
                     } else if (!ppp[0][1]) {
-                        bbb[this.x - 2][this.y + 1].setText("o");
+                        bbb[cx][cy].setOnAction(new EventHandler<ActionEvent>() { //button action
+                            @Override
+                            public void handle(ActionEvent event) {
+                                move(cx, cy);
+                                Canady_ChessJFX.resetBoard(bbb);
+                            }
+                        });
+                        bbb[cx][cy].setText("o");
                     }
                 }
             }
 
             if (this.x < 6) { // bottom ones
                 if (this.y > 0) {
+                    int cx = this.x + 2;
+                    int cy = this.y - 1;
                     if (ppp[1][2]) {
-                        bbb[this.x + 2][this.y - 1].setTextFill(Color.GREEN);
+                        bbb[cx][cy].setTextFill(Color.GREEN);
                     } else if (!ppp[0][2]) {
-                        bbb[this.x + 2][this.y - 1].setText("o");
+                        bbb[cx][cy].setOnAction(new EventHandler<ActionEvent>() { //button action
+                            @Override
+                            public void handle(ActionEvent event) {
+                                move(cx, cy);
+                                Canady_ChessJFX.resetBoard(bbb);
+                            }
+                        });
+                        bbb[cx][cy].setText("o");
                     }
                 }
                 if (this.y < 7) {
+                    int cx = this.x + 2;
+                    int cy = this.y + 1;
                     if (ppp[1][3]) {
-                        bbb[this.x + 2][this.y + 1].setTextFill(Color.GREEN);
+                        bbb[cx][cy].setTextFill(Color.GREEN);
                     } else if (!ppp[0][3]) {
-                        bbb[this.x + 2][this.y + 1].setText("o");
+                        bbb[cx][cy].setOnAction(new EventHandler<ActionEvent>() { //button action
+                            @Override
+                            public void handle(ActionEvent event) {
+                                move(cx, cy);
+                                Canady_ChessJFX.resetBoard(bbb);
+                            }
+                        });
+                        bbb[cx][cy].setText("o");
                     }
                 }
             }
 
             if (this.y > 1) { // left ones
                 if (this.x > 0) {
+                    int cx = this.x - 1;
+                    int cy = this.y - 2;
                     if (ppp[1][4]) {
-                        bbb[this.x - 1][this.y - 2].setTextFill(Color.GREEN);
+                        bbb[cx][cy].setTextFill(Color.GREEN);
                     } else if (!ppp[0][4]) {
-                        bbb[this.x - 1][this.y - 2].setText("o");
+                        bbb[cx][cy].setOnAction(new EventHandler<ActionEvent>() { //button action
+                            @Override
+                            public void handle(ActionEvent event) {
+                                move(cx, cy);
+                                Canady_ChessJFX.resetBoard(bbb);
+                            }
+                        });
+                        bbb[cx][cy].setText("o");
                     }
                 }
                 if (this.x < 7) {
+                    int cx = this.x + 1;
+                    int cy = this.y - 2;
                     if (ppp[1][5]) {
-                        bbb[this.x + 1][this.y - 2].setTextFill(Color.GREEN);
+                        bbb[cx][cy].setTextFill(Color.GREEN);
                     } else if (!ppp[0][5]) {
-                        bbb[this.x + 1][this.y - 2].setText("o");
+                        bbb[cx][cy].setOnAction(new EventHandler<ActionEvent>() { //button action
+                            @Override
+                            public void handle(ActionEvent event) {
+                                move(cx, cy);
+                                Canady_ChessJFX.resetBoard(bbb);
+                            }
+                        });
+                        bbb[cx][cy].setText("o");
                     }
                 }
             }
 
             if (this.y < 6) { // right ones
                 if (this.x > 0) {
+                    int cx = this.x - 1;
+                    int cy = this.y + 2;
                     if (ppp[1][6]) {
-                        bbb[this.x - 1][this.y + 2].setTextFill(Color.GREEN);
+                        bbb[cx][cy].setTextFill(Color.GREEN);
                     } else if (!ppp[0][6]) {
-                        bbb[this.x - 1][this.y + 2].setText("o");
+                        bbb[cx][cy].setOnAction(new EventHandler<ActionEvent>() { //button action
+                            @Override
+                            public void handle(ActionEvent event) {
+                                move(cx, cy);
+                                Canady_ChessJFX.resetBoard(bbb);
+                            }
+                        });
+                        bbb[cx][cy].setText("o");
                     }
                 }
                 if (this.x < 7) {
+                    int cx = this.x + 1;
+                    int cy = this.y + 2;
                     if (ppp[1][7]) {
-                        bbb[this.x + 1][this.y + 2].setTextFill(Color.GREEN);
+                        bbb[cx][cy].setTextFill(Color.GREEN);
                     } else if (!ppp[0][7]) {
-                        bbb[this.x + 1][this.y + 2].setText("o");
+                        bbb[cx][cy].setOnAction(new EventHandler<ActionEvent>() { //button action
+                            @Override
+                            public void handle(ActionEvent event) {
+                                move(cx, cy);
+                                Canady_ChessJFX.resetBoard(bbb);
+                            }
+                        });
+                        bbb[cx][cy].setText("o");
                     }
                 }
             }
 
         } else { // black
+
             if (this.x > 1) { // top ones
                 if (this.y > 0) {
+                    int cx = this.x - 2;
+                    int cy = this.y - 1;
                     if (ppp[0][0]) {
-                        bbb[this.x - 2][this.y - 1].setTextFill(Color.GREEN);
+                        bbb[cx][cy].setTextFill(Color.GREEN);
                     } else if (!ppp[1][0]) {
-                        bbb[this.x - 2][this.y - 1].setText("o");
+                        bbb[cx][cy].setOnAction(new EventHandler<ActionEvent>() { //button action
+                            @Override
+                            public void handle(ActionEvent event) {
+                                move(cx, cy);
+                                Canady_ChessJFX.resetBoard(bbb);
+                            }
+                        });
+                        bbb[cx][cy].setText("o");
                     }
                 }
                 if (this.y < 7) {
+                    int cx = this.x - 2;
+                    int cy = this.y + 1;
                     if (ppp[0][1]) {
-                        bbb[this.x - 2][this.y + 1].setTextFill(Color.GREEN);
+                        bbb[cx][cy].setTextFill(Color.GREEN);
                     } else if (!ppp[1][1]) {
-                        bbb[this.x - 2][this.y + 1].setText("o");
+                        bbb[cx][cy].setOnAction(new EventHandler<ActionEvent>() { //button action
+                            @Override
+                            public void handle(ActionEvent event) {
+                                move(cx, cy);
+                                Canady_ChessJFX.resetBoard(bbb);
+                            }
+                        });
+                        bbb[cx][cy].setText("o");
                     }
                 }
             }
 
             if (this.x < 6) { // bottom ones
                 if (this.y > 0) {
+                    int cx = this.x + 2;
+                    int cy = this.y - 1;
                     if (ppp[0][2]) {
-                        bbb[this.x + 2][this.y - 1].setTextFill(Color.GREEN);
+                        bbb[cx][cy].setTextFill(Color.GREEN);
                     } else if (!ppp[1][2]) {
-                        bbb[this.x + 2][this.y - 1].setText("o");
+                        bbb[cx][cy].setOnAction(new EventHandler<ActionEvent>() { //button action
+                            @Override
+                            public void handle(ActionEvent event) {
+                                move(cx, cy);
+                                Canady_ChessJFX.resetBoard(bbb);
+                            }
+                        });
+                        bbb[cx][cy].setText("o");
                     }
                 }
                 if (this.y < 7) {
+                    int cx = this.x + 2;
+                    int cy = this.y + 1;
                     if (ppp[0][3]) {
-                        bbb[this.x + 2][this.y + 1].setTextFill(Color.GREEN);
+                        bbb[cx][cy].setTextFill(Color.GREEN);
                     } else if (!ppp[1][3]) {
-                        bbb[this.x + 2][this.y + 1].setText("o");
+                        bbb[cx][cy].setOnAction(new EventHandler<ActionEvent>() { //button action
+                            @Override
+                            public void handle(ActionEvent event) {
+                                move(cx, cy);
+                                Canady_ChessJFX.resetBoard(bbb);
+                            }
+                        });
+                        bbb[cx][cy].setText("o");
                     }
                 }
             }
 
             if (this.y > 1) { // left ones
                 if (this.x > 0) {
+                    int cx = this.x - 1;
+                    int cy = this.y - 2;
                     if (ppp[0][4]) {
-                        bbb[this.x - 1][this.y - 2].setTextFill(Color.GREEN);
+                        bbb[cx][cy].setTextFill(Color.GREEN);
                     } else if (!ppp[1][4]) {
-                        bbb[this.x - 1][this.y - 2].setText("o");
+                        bbb[cx][cy].setOnAction(new EventHandler<ActionEvent>() { //button action
+                            @Override
+                            public void handle(ActionEvent event) {
+                                move(cx, cy);
+                                Canady_ChessJFX.resetBoard(bbb);
+                            }
+                        });
+                        bbb[cx][cy].setText("o");
                     }
                 }
                 if (this.x < 7) {
+                    int cx = this.x + 1;
+                    int cy = this.y - 2;
                     if (ppp[0][5]) {
-                        bbb[this.x + 1][this.y - 2].setTextFill(Color.GREEN);
+                        bbb[cx][cy].setTextFill(Color.GREEN);
                     } else if (!ppp[1][5]) {
-                        bbb[this.x + 1][this.y - 2].setText("o");
+                        bbb[cx][cy].setOnAction(new EventHandler<ActionEvent>() { //button action
+                            @Override
+                            public void handle(ActionEvent event) {
+                                move(cx, cy);
+                                Canady_ChessJFX.resetBoard(bbb);
+                            }
+                        });
+                        bbb[cx][cy].setText("o");
                     }
                 }
             }
 
             if (this.y < 6) { // right ones
                 if (this.x > 0) {
+                    int cx = this.x - 1;
+                    int cy = this.y + 2;
                     if (ppp[0][6]) {
-                        bbb[this.x - 1][this.y + 2].setTextFill(Color.GREEN);
+                        bbb[cx][cy].setTextFill(Color.GREEN);
                     } else if (!ppp[1][6]) {
-                        bbb[this.x - 1][this.y + 2].setText("o");
+                        bbb[cx][cy].setOnAction(new EventHandler<ActionEvent>() { //button action
+                            @Override
+                            public void handle(ActionEvent event) {
+                                move(cx, cy);
+                                Canady_ChessJFX.resetBoard(bbb);
+                            }
+                        });
+                        bbb[cx][cy].setText("o");
                     }
                 }
                 if (this.x < 7) {
+                    int cx = this.x + 1;
+                    int cy = this.y + 2;
                     if (ppp[0][7]) {
-                        bbb[this.x + 1][this.y + 2].setTextFill(Color.GREEN);
+                        bbb[cx][cy].setTextFill(Color.GREEN);
                     } else if (!ppp[1][7]) {
-                        bbb[this.x + 1][this.y + 2].setText("o");
+                        bbb[cx][cy].setOnAction(new EventHandler<ActionEvent>() { //button action
+                            @Override
+                            public void handle(ActionEvent event) {
+                                move(cx, cy);
+                                Canady_ChessJFX.resetBoard(bbb);
+                            }
+                        });
+                        bbb[cx][cy].setText("o");
                     }
                 }
             }

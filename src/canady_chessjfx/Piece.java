@@ -36,8 +36,8 @@ public class Piece {
     }
 
     public void move(int ax, int ay) {
-        this.setX(this.x + (ax * a));
-        this.setY(this.y + (ay * b));
+        this.x = ax;
+        this.y = ay;
     }
 
     public void display(Button[][] bbb) {

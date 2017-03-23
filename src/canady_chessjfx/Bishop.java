@@ -37,6 +37,11 @@ public class Bishop extends Piece {
     }
 
     @Override
+    public String getColor(){
+        return this.color;
+    }
+    
+    @Override
     public void move(int ax, int ay) {
         this.setX(this.x + (ax * a));
         this.setY(this.y + (ay * b));
@@ -45,80 +50,114 @@ public class Bishop extends Piece {
     @Override
     public void display(Button[][] bbb) {
         boolean there;
-        for (int i = 0; i <= this.y; i++) { // up left
-            there = false;
-            for (Piece p : Canady_ChessJFX.wlist) {
-                if (p.getX() == this.x - i && p.getY() == this.y - i) {
-                    i = this.y;
-                    there = true;
+
+        if (this.x > 0 && this.y > 0) {
+            for (int i = 1; i <= this.y; i++) { // up left
+                there = false;
+                for (Piece p : Canady_ChessJFX.wlist) {
+                    if (p.getX() == this.x - i && p.getY() == this.y - i) {
+                        if (!p.getColor().equals(this.color)) {
+                            bbb[p.getX()][p.getY()].setTextFill(Color.GREEN);
+                        }
+                        i = this.y;
+                        there = true;
+                    }
                 }
-            }
-            for (Piece p : Canady_ChessJFX.blist) {
-                if (p.getX() == this.x - i && p.getY() == this.y - i) {
-                    i = this.y;
-                    there = true;
+                for (Piece p : Canady_ChessJFX.blist) {
+                    if (p.getX() == this.x - i && p.getY() == this.y - i) {
+                        if (!p.getColor().equals(this.color)) {
+                            bbb[p.getX()][p.getY()].setTextFill(Color.GREEN);
+                        }
+                        i = this.y;
+                        there = true;
+                    }
                 }
-            }
-            if (!there) {
-                bbb[this.x - i][this.y - i].setText("o");
+                if (!there) {
+                    bbb[this.x - i][this.y - i].setText("o");
+                }
             }
         }
 
-        for (int i = 0; i <= this.y; i++) { // dn left
-            there = false;
-            for (Piece p : Canady_ChessJFX.wlist) {
-                if (p.getX() == this.x + i && p.getY() == this.y - i) {
-                    i = this.y;
-                    there = true;
+        if (this.x < 7 && this.y > 0) {
+            for (int i = 1; i <= this.y; i++) { // dn left
+                there = false;
+                for (Piece p : Canady_ChessJFX.wlist) {
+                    if (p.getX() == this.x + i && p.getY() == this.y - i) {
+                        if (!p.getColor().equals(this.color)) {
+                            bbb[p.getX()][p.getY()].setTextFill(Color.GREEN);
+                        }
+                        i = this.y;
+                        there = true;
+                    }
                 }
-            }
-            for (Piece p : Canady_ChessJFX.blist) {
-                if (p.getX() == this.x + i && p.getY() == this.y - i) {
-                    i = this.y;
-                    there = true;
+                for (Piece p : Canady_ChessJFX.blist) {
+                    if (p.getX() == this.x + i && p.getY() == this.y - i) {
+                        if (!p.getColor().equals(this.color)) {
+                            bbb[p.getX()][p.getY()].setTextFill(Color.GREEN);
+                        }
+                        i = this.y;
+                        there = true;
+                    }
                 }
-            }
-            if (!there) {
-                bbb[this.x + i][this.y - i].setText("o");
+                if (!there) {
+                    bbb[this.x + i][this.y - i].setText("o");
+                }
             }
         }
 
-        for (int i = 0; i < 8 - this.y; i++) { // up right
-            there = false;
-            for (Piece p : Canady_ChessJFX.wlist) {
-                if (p.getX() == this.x - i && p.getY() == this.y + i) {
-                    i = 7 - this.y;
-                    there = true;
+        if (this.x > 0 && this.y < 7) {
+            for (int i = 1; i < 8 - this.y; i++) { // up right
+                there = false;
+                for (Piece p : Canady_ChessJFX.wlist) {
+                    if (p.getX() == this.x - i && p.getY() == this.y + i) {
+                        if (!p.getColor().equals(this.color)) {
+                            bbb[p.getX()][p.getY()].setTextFill(Color.GREEN);
+                        }
+                        i = 7 - this.y;
+                        there = true;
+                    }
                 }
-            }
-            for (Piece p : Canady_ChessJFX.blist) {
-                if (p.getX() == this.x - i && p.getY() == this.y + i) {
-                    i = 7 - this.y;
-                    there = true;
+                for (Piece p : Canady_ChessJFX.blist) {
+                    if (p.getX() == this.x - i && p.getY() == this.y + i) {
+                        if (!p.getColor().equals(this.color)) {
+                            bbb[p.getX()][p.getY()].setTextFill(Color.GREEN);
+                        }
+                        i = 7 - this.y;
+                        there = true;
+                    }
                 }
-            }
-            if (!there) {
-                bbb[this.x - i][this.y + i].setText("o");
+                if (!there) {
+                    bbb[this.x - i][this.y + i].setText("o");
+                }
             }
         }
 
-        for (int i = 0; i < 8 - this.y; i++) { // dn right
-            there = false;
-            for (Piece p : Canady_ChessJFX.wlist) {
-                if (p.getX() == this.x + i && p.getY() == this.y + i) {
-                    i = 7 - this.y;
-                    there = true;
+        if (this.x < 7 && this.y < 7) {
+            for (int i = 1; i < 8 - this.y; i++) { // dn right
+                there = false;
+                for (Piece p : Canady_ChessJFX.wlist) {
+                    if (p.getX() == this.x + i && p.getY() == this.y + i) {
+                        if (!p.getColor().equals(this.color)) {
+                            bbb[p.getX()][p.getY()].setTextFill(Color.GREEN);
+                        }
+                        i = 7 - this.y;
+                        there = true;
+                    }
                 }
-            }
-            for (Piece p : Canady_ChessJFX.blist) {
-                if (p.getX() == this.x + i && p.getY() == this.y + i) {
-                    i = 7 - this.y;
-                    there = true;
+                for (Piece p : Canady_ChessJFX.blist) {
+                    if (p.getX() == this.x + i && p.getY() == this.y + i) {
+                        if (!p.getColor().equals(this.color)) {
+                            bbb[p.getX()][p.getY()].setTextFill(Color.GREEN);
+                        }
+                        i = 7 - this.y;
+                        there = true;
+                    }
                 }
-            }
-            if (!there) {
-                bbb[this.x + i][this.y + i].setText("o");
+                if (!there) {
+                    bbb[this.x + i][this.y + i].setText("o");
+                }
             }
         }
     }
+
 }

@@ -9,7 +9,6 @@ import javafx.stage.*;
 import java.util.*;
 import javafx.scene.layout.Background;
 import javafx.scene.paint.Color;
-//import javafx.scene.paint.Paint;
 import javafx.scene.shape.Rectangle;
 
 public class Canady_ChessJFX extends Application {
@@ -115,6 +114,13 @@ public class Canady_ChessJFX extends Application {
 //            c++;
 //            p = (c % 2) + 1;
 //        }
+//      if (wlist.indexOf(wking) == -1) {
+//          System.out.println("Black Player Wins!");
+//      }
+//      if (blist.indexOf(bking) == -1) {
+//          System.out.println("White Player Wins!");
+//      }
+
     }
 
     public static void initPieces() {
@@ -188,13 +194,40 @@ public class Canady_ChessJFX extends Application {
     }
 
     static void resetBoard(Button[][] bbb) {
+        for (int i = 0; i < 8; i++) {
+            for (int j = 0; j < 8; j++) {
+                bbb[i][j].setText("  ");
+                bbb[i][j].setOnAction(new EventHandler<ActionEvent>() { //button action
+                    @Override
+                    public void handle(ActionEvent event) {
+
+                    }
+                });
+            }
+        }
+
         for (Piece p : wlist) {
             bbb[p.getX()][p.getY()].setTextFill(Color.BLACK);
             bbb[p.getX()][p.getY()].setText(Character.toString(p.getSymbol()));
+            bbb[p.getX()][p.getY()].setOnAction(new EventHandler<ActionEvent>() { //button action
+                @Override
+                public void handle(ActionEvent event) {
+                    resetBoard(bbb);
+                    p.display(bbb);
+                }
+            });
         }
+
         for (Piece p : blist) {
             bbb[p.getX()][p.getY()].setTextFill(Color.BLACK);
             bbb[p.getX()][p.getY()].setText(Character.toString(p.getSymbol()));
+            bbb[p.getX()][p.getY()].setOnAction(new EventHandler<ActionEvent>() { //button action
+                @Override
+                public void handle(ActionEvent event) {
+                    resetBoard(bbb);
+                    p.display(bbb);
+                }
+            });
         }
     }
 
