@@ -62,7 +62,7 @@ public class Rook extends Piece {
                 }
             }
             for (Piece p : Canady_ChessJFX.blist) {
-                if (check(p, this.x - i, this.y)) {
+                if (check(p, this.x - i, this.y) ) {
                     if (!p.getColor().equals(this.color)) {
                         bbb[p.getX()][p.getY()].setTextFill(Color.GREEN);
                     }

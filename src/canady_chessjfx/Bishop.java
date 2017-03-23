@@ -53,6 +53,8 @@ public class Bishop extends Piece {
 
         if (this.x > 0 && this.y > 0) {
             for (int i = 1; i <= this.y; i++) { // up left
+                int cx = this.x - i;
+                int cy = this.y - i;
                 there = false;
                 for (Piece p : Canady_ChessJFX.wlist) {
                     if (p.getX() == this.x - i && p.getY() == this.y - i) {
@@ -73,8 +75,6 @@ public class Bishop extends Piece {
                     }
                 }
                 if (!there) {
-                    int cx = this.x - i;
-                    int cy = this.y - i;
                     bbb[cx][cy].setOnAction(new EventHandler<ActionEvent>() { //button action
                         @Override
                         public void handle(ActionEvent event) {
@@ -89,6 +89,8 @@ public class Bishop extends Piece {
 
         if (this.x < 7 && this.y > 0) {
             for (int i = 1; i <= this.y; i++) { // dn left
+                int cx = this.x + i;
+                int cy = this.y - i;
                 there = false;
                 for (Piece p : Canady_ChessJFX.wlist) {
                     if (p.getX() == this.x + i && p.getY() == this.y - i) {
@@ -109,8 +111,6 @@ public class Bishop extends Piece {
                     }
                 }
                 if (!there) {
-                    int cx = this.x + i;
-                    int cy = this.y - i;
                     bbb[cx][cy].setOnAction(new EventHandler<ActionEvent>() { //button action
                         @Override
                         public void handle(ActionEvent event) {
@@ -125,6 +125,8 @@ public class Bishop extends Piece {
 
         if (this.x > 0 && this.y < 7) {
             for (int i = 1; i < 8 - this.y; i++) { // up right
+                int cx = this.x - i;
+                int cy = this.y + i;
                 there = false;
                 for (Piece p : Canady_ChessJFX.wlist) {
                     if (p.getX() == this.x - i && p.getY() == this.y + i) {
@@ -145,8 +147,6 @@ public class Bishop extends Piece {
                     }
                 }
                 if (!there) {
-                    int cx = this.x - i;
-                    int cy = this.y + i;
                     bbb[cx][cy].setOnAction(new EventHandler<ActionEvent>() { //button action
                         @Override
                         public void handle(ActionEvent event) {
@@ -161,6 +161,8 @@ public class Bishop extends Piece {
 
         if (this.x < 7 && this.y < 7) {
             for (int i = 1; i < 8 - this.y; i++) { // dn right
+                int cx = this.x + i;
+                int cy = this.y + i;
                 there = false;
                 for (Piece p : Canady_ChessJFX.wlist) {
                     if (p.getX() == this.x + i && p.getY() == this.y + i) {
@@ -181,8 +183,6 @@ public class Bishop extends Piece {
                     }
                 }
                 if (!there) {
-                    int cx = this.x + i;
-                    int cy = this.y + i;
                     bbb[cx][cy].setOnAction(new EventHandler<ActionEvent>() { //button action
                         @Override
                         public void handle(ActionEvent event) {

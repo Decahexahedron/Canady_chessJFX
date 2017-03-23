@@ -119,6 +119,22 @@ public class Knight extends Piece {
                     int cy = this.y - 1;
                     if (ppp[1][0]) {
                         bbb[cx][cy].setTextFill(Color.GREEN);
+                        bbb[cx][cy].setOnAction(new EventHandler<ActionEvent>() { //button action
+                            @Override
+                            public void handle(ActionEvent event) {
+                                Piece e = null;
+                                for (Piece p : Canady_ChessJFX.blist) {
+                                    if (check(p, cx, cy)) {
+                                        e = p;
+                                    }
+                                }
+                                if (e != null) {
+                                    Canady_ChessJFX.blist.remove(e);
+                                }
+                                move(cx, cy);
+                                Canady_ChessJFX.resetBoard(bbb);
+                            }
+                        });
                     } else if (!ppp[0][0]) {
                         bbb[cx][cy].setOnAction(new EventHandler<ActionEvent>() { //button action
                             @Override
@@ -135,6 +151,22 @@ public class Knight extends Piece {
                     int cy = this.y + 1;
                     if (ppp[1][1]) {
                         bbb[cx][cy].setTextFill(Color.GREEN);
+                        bbb[cx][cy].setOnAction(new EventHandler<ActionEvent>() { //button action
+                            @Override
+                            public void handle(ActionEvent event) {
+                                Piece e = null;
+                                for (Piece p : Canady_ChessJFX.blist) {
+                                    if (check(p, cx, cy)) {
+                                        e = p;
+                                    }
+                                }
+                                if (e != null) {
+                                    Canady_ChessJFX.blist.remove(e);
+                                }
+                                move(cx, cy);
+                                Canady_ChessJFX.resetBoard(bbb);
+                            }
+                        });
                     } else if (!ppp[0][1]) {
                         bbb[cx][cy].setOnAction(new EventHandler<ActionEvent>() { //button action
                             @Override
@@ -154,6 +186,22 @@ public class Knight extends Piece {
                     int cy = this.y - 1;
                     if (ppp[1][2]) {
                         bbb[cx][cy].setTextFill(Color.GREEN);
+                        bbb[cx][cy].setOnAction(new EventHandler<ActionEvent>() { //button action
+                            @Override
+                            public void handle(ActionEvent event) {
+                                Piece e = null;
+                                for (Piece p : Canady_ChessJFX.blist) {
+                                    if (check(p, cx, cy)) {
+                                        e = p;
+                                    }
+                                }
+                                if (e != null) {
+                                    Canady_ChessJFX.blist.remove(e);
+                                }
+                                move(cx, cy);
+                                Canady_ChessJFX.resetBoard(bbb);
+                            }
+                        });
                     } else if (!ppp[0][2]) {
                         bbb[cx][cy].setOnAction(new EventHandler<ActionEvent>() { //button action
                             @Override
@@ -170,6 +218,22 @@ public class Knight extends Piece {
                     int cy = this.y + 1;
                     if (ppp[1][3]) {
                         bbb[cx][cy].setTextFill(Color.GREEN);
+                        bbb[cx][cy].setOnAction(new EventHandler<ActionEvent>() { //button action
+                            @Override
+                            public void handle(ActionEvent event) {
+                                Piece e = null;
+                                for (Piece p : Canady_ChessJFX.blist) {
+                                    if (check(p, cx, cy)) {
+                                        e = p;
+                                    }
+                                }
+                                if (e != null) {
+                                    Canady_ChessJFX.blist.remove(e);
+                                }
+                                move(cx, cy);
+                                Canady_ChessJFX.resetBoard(bbb);
+                            }
+                        });
                     } else if (!ppp[0][3]) {
                         bbb[cx][cy].setOnAction(new EventHandler<ActionEvent>() { //button action
                             @Override
@@ -189,6 +253,22 @@ public class Knight extends Piece {
                     int cy = this.y - 2;
                     if (ppp[1][4]) {
                         bbb[cx][cy].setTextFill(Color.GREEN);
+                        bbb[cx][cy].setOnAction(new EventHandler<ActionEvent>() { //button action
+                            @Override
+                            public void handle(ActionEvent event) {
+                                Piece e = null;
+                                for (Piece p : Canady_ChessJFX.blist) {
+                                    if (check(p, cx, cy)) {
+                                        e = p;
+                                    }
+                                }
+                                if (e != null) {
+                                    Canady_ChessJFX.blist.remove(e);
+                                }
+                                move(cx, cy);
+                                Canady_ChessJFX.resetBoard(bbb);
+                            }
+                        });
                     } else if (!ppp[0][4]) {
                         bbb[cx][cy].setOnAction(new EventHandler<ActionEvent>() { //button action
                             @Override
@@ -205,6 +285,22 @@ public class Knight extends Piece {
                     int cy = this.y - 2;
                     if (ppp[1][5]) {
                         bbb[cx][cy].setTextFill(Color.GREEN);
+                        bbb[cx][cy].setOnAction(new EventHandler<ActionEvent>() { //button action
+                            @Override
+                            public void handle(ActionEvent event) {
+                                Piece e = null;
+                                for (Piece p : Canady_ChessJFX.blist) {
+                                    if (check(p, cx, cy)) {
+                                        e = p;
+                                    }
+                                }
+                                if (e != null) {
+                                    Canady_ChessJFX.blist.remove(e);
+                                }
+                                move(cx, cy);
+                                Canady_ChessJFX.resetBoard(bbb);
+                            }
+                        });
                     } else if (!ppp[0][5]) {
                         bbb[cx][cy].setOnAction(new EventHandler<ActionEvent>() { //button action
                             @Override
@@ -224,6 +320,22 @@ public class Knight extends Piece {
                     int cy = this.y + 2;
                     if (ppp[1][6]) {
                         bbb[cx][cy].setTextFill(Color.GREEN);
+                        bbb[cx][cy].setOnAction(new EventHandler<ActionEvent>() { //button action
+                            @Override
+                            public void handle(ActionEvent event) {
+                                Piece e = null;
+                                for (Piece p : Canady_ChessJFX.blist) {
+                                    if (check(p, cx, cy)) {
+                                        e = p;
+                                    }
+                                }
+                                if (e != null) {
+                                    Canady_ChessJFX.blist.remove(e);
+                                }
+                                move(cx, cy);
+                                Canady_ChessJFX.resetBoard(bbb);
+                            }
+                        });
                     } else if (!ppp[0][6]) {
                         bbb[cx][cy].setOnAction(new EventHandler<ActionEvent>() { //button action
                             @Override
@@ -240,6 +352,22 @@ public class Knight extends Piece {
                     int cy = this.y + 2;
                     if (ppp[1][7]) {
                         bbb[cx][cy].setTextFill(Color.GREEN);
+                        bbb[cx][cy].setOnAction(new EventHandler<ActionEvent>() { //button action
+                            @Override
+                            public void handle(ActionEvent event) {
+                                Piece e = null;
+                                for (Piece p : Canady_ChessJFX.blist) {
+                                    if (check(p, cx, cy)) {
+                                        e = p;
+                                    }
+                                }
+                                if (e != null) {
+                                    Canady_ChessJFX.blist.remove(e);
+                                }
+                                move(cx, cy);
+                                Canady_ChessJFX.resetBoard(bbb);
+                            }
+                        });
                     } else if (!ppp[0][7]) {
                         bbb[cx][cy].setOnAction(new EventHandler<ActionEvent>() { //button action
                             @Override
@@ -261,6 +389,22 @@ public class Knight extends Piece {
                     int cy = this.y - 1;
                     if (ppp[0][0]) {
                         bbb[cx][cy].setTextFill(Color.GREEN);
+                        bbb[cx][cy].setOnAction(new EventHandler<ActionEvent>() { //button action
+                            @Override
+                            public void handle(ActionEvent event) {
+                                Piece e = null;
+                                for (Piece p : Canady_ChessJFX.wlist) {
+                                    if (check(p, cx, cy)) {
+                                        e = p;
+                                    }
+                                }
+                                if (e != null) {
+                                    Canady_ChessJFX.wlist.remove(e);
+                                }
+                                move(cx, cy);
+                                Canady_ChessJFX.resetBoard(bbb);
+                            }
+                        });
                     } else if (!ppp[1][0]) {
                         bbb[cx][cy].setOnAction(new EventHandler<ActionEvent>() { //button action
                             @Override
@@ -277,6 +421,22 @@ public class Knight extends Piece {
                     int cy = this.y + 1;
                     if (ppp[0][1]) {
                         bbb[cx][cy].setTextFill(Color.GREEN);
+                        bbb[cx][cy].setOnAction(new EventHandler<ActionEvent>() { //button action
+                            @Override
+                            public void handle(ActionEvent event) {
+                                Piece e = null;
+                                for (Piece p : Canady_ChessJFX.wlist) {
+                                    if (check(p, cx, cy)) {
+                                        e = p;
+                                    }
+                                }
+                                if (e != null) {
+                                    Canady_ChessJFX.wlist.remove(e);
+                                }
+                                move(cx, cy);
+                                Canady_ChessJFX.resetBoard(bbb);
+                            }
+                        });
                     } else if (!ppp[1][1]) {
                         bbb[cx][cy].setOnAction(new EventHandler<ActionEvent>() { //button action
                             @Override
@@ -296,6 +456,22 @@ public class Knight extends Piece {
                     int cy = this.y - 1;
                     if (ppp[0][2]) {
                         bbb[cx][cy].setTextFill(Color.GREEN);
+                        bbb[cx][cy].setOnAction(new EventHandler<ActionEvent>() { //button action
+                            @Override
+                            public void handle(ActionEvent event) {
+                                Piece e = null;
+                                for (Piece p : Canady_ChessJFX.wlist) {
+                                    if (check(p, cx, cy)) {
+                                        e = p;
+                                    }
+                                }
+                                if (e != null) {
+                                    Canady_ChessJFX.wlist.remove(e);
+                                }
+                                move(cx, cy);
+                                Canady_ChessJFX.resetBoard(bbb);
+                            }
+                        });
                     } else if (!ppp[1][2]) {
                         bbb[cx][cy].setOnAction(new EventHandler<ActionEvent>() { //button action
                             @Override
@@ -312,6 +488,22 @@ public class Knight extends Piece {
                     int cy = this.y + 1;
                     if (ppp[0][3]) {
                         bbb[cx][cy].setTextFill(Color.GREEN);
+                        bbb[cx][cy].setOnAction(new EventHandler<ActionEvent>() { //button action
+                            @Override
+                            public void handle(ActionEvent event) {
+                                Piece e = null;
+                                for (Piece p : Canady_ChessJFX.wlist) {
+                                    if (check(p, cx, cy)) {
+                                        e = p;
+                                    }
+                                }
+                                if (e != null) {
+                                    Canady_ChessJFX.wlist.remove(e);
+                                }
+                                move(cx, cy);
+                                Canady_ChessJFX.resetBoard(bbb);
+                            }
+                        });
                     } else if (!ppp[1][3]) {
                         bbb[cx][cy].setOnAction(new EventHandler<ActionEvent>() { //button action
                             @Override
@@ -331,6 +523,22 @@ public class Knight extends Piece {
                     int cy = this.y - 2;
                     if (ppp[0][4]) {
                         bbb[cx][cy].setTextFill(Color.GREEN);
+                        bbb[cx][cy].setOnAction(new EventHandler<ActionEvent>() { //button action
+                            @Override
+                            public void handle(ActionEvent event) {
+                                Piece e = null;
+                                for (Piece p : Canady_ChessJFX.wlist) {
+                                    if (check(p, cx, cy)) {
+                                        e = p;
+                                    }
+                                }
+                                if (e != null) {
+                                    Canady_ChessJFX.wlist.remove(e);
+                                }
+                                move(cx, cy);
+                                Canady_ChessJFX.resetBoard(bbb);
+                            }
+                        });
                     } else if (!ppp[1][4]) {
                         bbb[cx][cy].setOnAction(new EventHandler<ActionEvent>() { //button action
                             @Override
@@ -347,6 +555,22 @@ public class Knight extends Piece {
                     int cy = this.y - 2;
                     if (ppp[0][5]) {
                         bbb[cx][cy].setTextFill(Color.GREEN);
+                        bbb[cx][cy].setOnAction(new EventHandler<ActionEvent>() { //button action
+                            @Override
+                            public void handle(ActionEvent event) {
+                                Piece e = null;
+                                for (Piece p : Canady_ChessJFX.wlist) {
+                                    if (check(p, cx, cy)) {
+                                        e = p;
+                                    }
+                                }
+                                if (e != null) {
+                                    Canady_ChessJFX.wlist.remove(e);
+                                }
+                                move(cx, cy);
+                                Canady_ChessJFX.resetBoard(bbb);
+                            }
+                        });
                     } else if (!ppp[1][5]) {
                         bbb[cx][cy].setOnAction(new EventHandler<ActionEvent>() { //button action
                             @Override
@@ -366,6 +590,22 @@ public class Knight extends Piece {
                     int cy = this.y + 2;
                     if (ppp[0][6]) {
                         bbb[cx][cy].setTextFill(Color.GREEN);
+                        bbb[cx][cy].setOnAction(new EventHandler<ActionEvent>() { //button action
+                            @Override
+                            public void handle(ActionEvent event) {
+                                Piece e = null;
+                                for (Piece p : Canady_ChessJFX.wlist) {
+                                    if (check(p, cx, cy)) {
+                                        e = p;
+                                    }
+                                }
+                                if (e != null) {
+                                    Canady_ChessJFX.wlist.remove(e);
+                                }
+                                move(cx, cy);
+                                Canady_ChessJFX.resetBoard(bbb);
+                            }
+                        });
                     } else if (!ppp[1][6]) {
                         bbb[cx][cy].setOnAction(new EventHandler<ActionEvent>() { //button action
                             @Override
@@ -382,6 +622,22 @@ public class Knight extends Piece {
                     int cy = this.y + 2;
                     if (ppp[0][7]) {
                         bbb[cx][cy].setTextFill(Color.GREEN);
+                        bbb[cx][cy].setOnAction(new EventHandler<ActionEvent>() { //button action
+                            @Override
+                            public void handle(ActionEvent event) {
+                                Piece e = null;
+                                for (Piece p : Canady_ChessJFX.wlist) {
+                                    if (check(p, cx, cy)) {
+                                        e = p;
+                                    }
+                                }
+                                if (e != null) {
+                                    Canady_ChessJFX.wlist.remove(e);
+                                }
+                                move(cx, cy);
+                                Canady_ChessJFX.resetBoard(bbb);
+                            }
+                        });
                     } else if (!ppp[1][7]) {
                         bbb[cx][cy].setOnAction(new EventHandler<ActionEvent>() { //button action
                             @Override

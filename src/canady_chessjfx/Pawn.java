@@ -70,9 +70,27 @@ public class Pawn extends Piece {
                     }
                 }
                 if (m) {
+                    int cx = this.x + 1;
+                    int cy = this.y;
+                    bbb[cx][cy].setOnAction(new EventHandler<ActionEvent>() { //button action
+                        @Override
+                        public void handle(ActionEvent event) {
+                            move(cx, cy);
+                            Canady_ChessJFX.resetBoard(bbb);
+                        }
+                    });
                     bbb[this.x + 1][this.y].setText("o");
                 }
                 if (m1) {
+                    int cx = this.x + 2;
+                    int cy = this.y;
+                    bbb[cx][cy].setOnAction(new EventHandler<ActionEvent>() { //button action
+                        @Override
+                        public void handle(ActionEvent event) {
+                            move(cx, cy);
+                            Canady_ChessJFX.resetBoard(bbb);
+                        }
+                    });
                     bbb[this.x + 2][this.y].setText("o");
                 }
             } else {
@@ -88,6 +106,15 @@ public class Pawn extends Piece {
                     }
                 }
                 if (m) {
+                    int cx = this.x + 1;
+                    int cy = this.y;
+                    bbb[cx][cy].setOnAction(new EventHandler<ActionEvent>() { //button action
+                        @Override
+                        public void handle(ActionEvent event) {
+                            move(cx, cy);
+                            Canady_ChessJFX.resetBoard(bbb);
+                        }
+                    });
                     bbb[this.x + 1][this.y].setText("o");
                 }
             }
@@ -112,9 +139,27 @@ public class Pawn extends Piece {
                 }
             }
             if (m) {
+                int cx = this.x - 1;
+                int cy = this.y;
+                bbb[cx][cy].setOnAction(new EventHandler<ActionEvent>() { //button action
+                    @Override
+                    public void handle(ActionEvent event) {
+                        move(cx, cy);
+                        Canady_ChessJFX.resetBoard(bbb);
+                    }
+                });
                 bbb[this.x - 1][this.y].setText("o");
             }
             if (m1) {
+                int cx = this.x - 2;
+                int cy = this.y;
+                bbb[cx][cy].setOnAction(new EventHandler<ActionEvent>() { //button action
+                    @Override
+                    public void handle(ActionEvent event) {
+                        move(cx, cy);
+                        Canady_ChessJFX.resetBoard(bbb);
+                    }
+                });
                 bbb[this.x - 2][this.y].setText("o");
             }
         } else {
@@ -130,6 +175,15 @@ public class Pawn extends Piece {
                 }
             }
             if (m) {
+                int cx = this.x - 1;
+                int cy = this.y;
+                bbb[cx][cy].setOnAction(new EventHandler<ActionEvent>() { //button action
+                    @Override
+                    public void handle(ActionEvent event) {
+                        move(cx, cy);
+                        Canady_ChessJFX.resetBoard(bbb);
+                    }
+                });
                 bbb[this.x - 1][this.y].setText("o");
             }
         }
