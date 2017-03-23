@@ -7,7 +7,6 @@ import javafx.scene.paint.Color;
 public class Knight extends Piece {
 
     private int x, y;
-    private int a, b;
     private char symbol;
     private final String color;
 
