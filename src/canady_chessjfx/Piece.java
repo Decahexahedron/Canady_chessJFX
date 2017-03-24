@@ -1,7 +1,6 @@
 package canady_chessjfx;
 
 import javafx.scene.control.*;
-import javafx.scene.paint.Color;
 
 public class Piece {
 
