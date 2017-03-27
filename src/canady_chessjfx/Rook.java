@@ -51,10 +51,28 @@ public class Rook extends Piece {
     public void display(Button[][] bbb) {
         boolean there;
         for (int i = 1; i <= this.x; i++) { // up
+            int cx = this.x - i;
+            int cy = this.y;
             there = false;
             for (Piece p : Canady_ChessJFX.wlist) {
                 if (check(p, this.x - i, this.y)) {
                     if (!p.getColor().equals(this.color)) {
+                        bbb[cx][cy].setOnAction(new EventHandler<ActionEvent>() { //button action
+                            @Override
+                            public void handle(ActionEvent event) {
+                                Piece e = null;
+                                for (Piece p : Canady_ChessJFX.wlist) {
+                                    if (check(p, cx, cy)) {
+                                        e = p;
+                                    }
+                                }
+                                if (e != null) {
+                                    Canady_ChessJFX.wlist.remove(e);
+                                }
+                                move(cx, cy);
+                                Canady_ChessJFX.resetBoard(bbb);
+                            }
+                        });
                         bbb[p.getX()][p.getY()].setTextFill(Color.GREEN);
                     }
                     i = this.x;
@@ -62,8 +80,24 @@ public class Rook extends Piece {
                 }
             }
             for (Piece p : Canady_ChessJFX.blist) {
-                if (check(p, this.x - i, this.y) ) {
+                if (check(p, this.x - i, this.y)) {
                     if (!p.getColor().equals(this.color)) {
+                        bbb[cx][cy].setOnAction(new EventHandler<ActionEvent>() { //button action
+                            @Override
+                            public void handle(ActionEvent event) {
+                                Piece e = null;
+                                for (Piece p : Canady_ChessJFX.blist) {
+                                    if (check(p, cx, cy)) {
+                                        e = p;
+                                    }
+                                }
+                                if (e != null) {
+                                    Canady_ChessJFX.blist.remove(e);
+                                }
+                                move(cx, cy);
+                                Canady_ChessJFX.resetBoard(bbb);
+                            }
+                        });
                         bbb[p.getX()][p.getY()].setTextFill(Color.GREEN);
                     }
                     i = this.x;
@@ -71,8 +105,6 @@ public class Rook extends Piece {
                 }
             }
             if (!there) {
-                int cx = this.x - i;
-                int cy = this.y;
                 bbb[cx][cy].setOnAction(new EventHandler<ActionEvent>() { //button action
                     @Override
                     public void handle(ActionEvent event) {
@@ -85,10 +117,28 @@ public class Rook extends Piece {
         }
 
         for (int i = 1; i <= 7 - this.x; i++) { // dn
+            int cx = this.x + i;
+            int cy = this.y;
             there = false;
             for (Piece p : Canady_ChessJFX.wlist) {
                 if (check(p, this.x + i, this.y)) {
                     if (!p.getColor().equals(this.color)) {
+                        bbb[cx][cy].setOnAction(new EventHandler<ActionEvent>() { //button action
+                            @Override
+                            public void handle(ActionEvent event) {
+                                Piece e = null;
+                                for (Piece p : Canady_ChessJFX.wlist) {
+                                    if (check(p, cx, cy)) {
+                                        e = p;
+                                    }
+                                }
+                                if (e != null) {
+                                    Canady_ChessJFX.wlist.remove(e);
+                                }
+                                move(cx, cy);
+                                Canady_ChessJFX.resetBoard(bbb);
+                            }
+                        });
                         bbb[p.getX()][p.getY()].setTextFill(Color.GREEN);
                     }
                     i = 7 - this.x;
@@ -98,6 +148,22 @@ public class Rook extends Piece {
             for (Piece p : Canady_ChessJFX.blist) {
                 if (check(p, this.x + i, this.y)) {
                     if (!p.getColor().equals(this.color)) {
+                        bbb[cx][cy].setOnAction(new EventHandler<ActionEvent>() { //button action
+                            @Override
+                            public void handle(ActionEvent event) {
+                                Piece e = null;
+                                for (Piece p : Canady_ChessJFX.blist) {
+                                    if (check(p, cx, cy)) {
+                                        e = p;
+                                    }
+                                }
+                                if (e != null) {
+                                    Canady_ChessJFX.blist.remove(e);
+                                }
+                                move(cx, cy);
+                                Canady_ChessJFX.resetBoard(bbb);
+                            }
+                        });
                         bbb[p.getX()][p.getY()].setTextFill(Color.GREEN);
                     }
                     i = 7 - this.x;
@@ -105,8 +171,6 @@ public class Rook extends Piece {
                 }
             }
             if (!there) {
-                int cx = this.x + i;
-                int cy = this.y;
                 bbb[cx][cy].setOnAction(new EventHandler<ActionEvent>() { //button action
                     @Override
                     public void handle(ActionEvent event) {
@@ -119,10 +183,28 @@ public class Rook extends Piece {
         }
 
         for (int i = 1; i <= this.y; i++) { // lf
+            int cx = this.x;
+            int cy = this.y - i;
             there = false;
             for (Piece p : Canady_ChessJFX.wlist) {
                 if (check(p, this.x, this.y - i)) {
                     if (!p.getColor().equals(this.color)) {
+                        bbb[cx][cy].setOnAction(new EventHandler<ActionEvent>() { //button action
+                            @Override
+                            public void handle(ActionEvent event) {
+                                Piece e = null;
+                                for (Piece p : Canady_ChessJFX.wlist) {
+                                    if (check(p, cx, cy)) {
+                                        e = p;
+                                    }
+                                }
+                                if (e != null) {
+                                    Canady_ChessJFX.wlist.remove(e);
+                                }
+                                move(cx, cy);
+                                Canady_ChessJFX.resetBoard(bbb);
+                            }
+                        });
                         bbb[p.getX()][p.getY()].setTextFill(Color.GREEN);
                     }
                     i = this.y;
@@ -132,6 +214,22 @@ public class Rook extends Piece {
             for (Piece p : Canady_ChessJFX.blist) {
                 if (check(p, this.x, this.y - i)) {
                     if (!p.getColor().equals(this.color)) {
+                        bbb[cx][cy].setOnAction(new EventHandler<ActionEvent>() { //button action
+                            @Override
+                            public void handle(ActionEvent event) {
+                                Piece e = null;
+                                for (Piece p : Canady_ChessJFX.blist) {
+                                    if (check(p, cx, cy)) {
+                                        e = p;
+                                    }
+                                }
+                                if (e != null) {
+                                    Canady_ChessJFX.blist.remove(e);
+                                }
+                                move(cx, cy);
+                                Canady_ChessJFX.resetBoard(bbb);
+                            }
+                        });
                         bbb[p.getX()][p.getY()].setTextFill(Color.GREEN);
                     }
                     i = this.y;
@@ -139,8 +237,6 @@ public class Rook extends Piece {
                 }
             }
             if (!there) {
-                int cx = this.x;
-                int cy = this.y - i;
                 bbb[cx][cy].setOnAction(new EventHandler<ActionEvent>() { //button action
                     @Override
                     public void handle(ActionEvent event) {
@@ -153,10 +249,28 @@ public class Rook extends Piece {
         }
 
         for (int i = 1; i < 7 - this.y; i++) { // rt
+            int cx = this.x;
+            int cy = this.y + i;
             there = false;
             for (Piece p : Canady_ChessJFX.wlist) {
                 if (check(p, this.x, this.y + i)) {
                     if (!p.getColor().equals(this.color)) {
+                        bbb[cx][cy].setOnAction(new EventHandler<ActionEvent>() { //button action
+                            @Override
+                            public void handle(ActionEvent event) {
+                                Piece e = null;
+                                for (Piece p : Canady_ChessJFX.wlist) {
+                                    if (check(p, cx, cy)) {
+                                        e = p;
+                                    }
+                                }
+                                if (e != null) {
+                                    Canady_ChessJFX.wlist.remove(e);
+                                }
+                                move(cx, cy);
+                                Canady_ChessJFX.resetBoard(bbb);
+                            }
+                        });
                         bbb[p.getX()][p.getY()].setTextFill(Color.GREEN);
                     }
                     i = 7 - this.y;
@@ -166,6 +280,22 @@ public class Rook extends Piece {
             for (Piece p : Canady_ChessJFX.blist) {
                 if (check(p, this.x, this.y + i)) {
                     if (!p.getColor().equals(this.color)) {
+                        bbb[cx][cy].setOnAction(new EventHandler<ActionEvent>() { //button action
+                            @Override
+                            public void handle(ActionEvent event) {
+                                Piece e = null;
+                                for (Piece p : Canady_ChessJFX.blist) {
+                                    if (check(p, cx, cy)) {
+                                        e = p;
+                                    }
+                                }
+                                if (e != null) {
+                                    Canady_ChessJFX.blist.remove(e);
+                                }
+                                move(cx, cy);
+                                Canady_ChessJFX.resetBoard(bbb);
+                            }
+                        });
                         bbb[p.getX()][p.getY()].setTextFill(Color.GREEN);
                     }
                     i = 7 - this.y;
@@ -173,8 +303,6 @@ public class Rook extends Piece {
                 }
             }
             if (!there) {
-                int cx = this.x;
-                int cy = this.y + i;
                 bbb[cx][cy].setOnAction(new EventHandler<ActionEvent>() { //button action
                     @Override
                     public void handle(ActionEvent event) {

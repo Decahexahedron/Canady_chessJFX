@@ -57,8 +57,24 @@ public class Bishop extends Piece {
                 int cy = this.y - i;
                 there = false;
                 for (Piece p : Canady_ChessJFX.wlist) {
-                    if (p.getX() == this.x - i && p.getY() == this.y - i) {
+                    if (p.getX() == cx && p.getY() == cy) {
                         if (!p.getColor().equals(this.color)) {
+                            bbb[cx][cy].setOnAction(new EventHandler<ActionEvent>() { //button action
+                                @Override
+                                public void handle(ActionEvent event) {
+                                    Piece e = null;
+                                    for (Piece p : Canady_ChessJFX.wlist) {
+                                        if (check(p, cx, cy)) {
+                                            e = p;
+                                        }
+                                    }
+                                    if (e != null) {
+                                        Canady_ChessJFX.wlist.remove(e);
+                                    }
+                                    move(cx, cy);
+                                    Canady_ChessJFX.resetBoard(bbb);
+                                }
+                            });
                             bbb[p.getX()][p.getY()].setTextFill(Color.GREEN);
                         }
                         i = this.y;
@@ -66,8 +82,24 @@ public class Bishop extends Piece {
                     }
                 }
                 for (Piece p : Canady_ChessJFX.blist) {
-                    if (p.getX() == this.x - i && p.getY() == this.y - i) {
+                    if (p.getX() == cx && p.getY() == cy) {
                         if (!p.getColor().equals(this.color)) {
+                            bbb[cx][cy].setOnAction(new EventHandler<ActionEvent>() { //button action
+                                @Override
+                                public void handle(ActionEvent event) {
+                                    Piece e = null;
+                                    for (Piece p : Canady_ChessJFX.blist) {
+                                        if (check(p, cx, cy)) {
+                                            e = p;
+                                        }
+                                    }
+                                    if (e != null) {
+                                        Canady_ChessJFX.blist.remove(e);
+                                    }
+                                    move(cx, cy);
+                                    Canady_ChessJFX.resetBoard(bbb);
+                                }
+                            });
                             bbb[p.getX()][p.getY()].setTextFill(Color.GREEN);
                         }
                         i = this.y;
@@ -82,7 +114,7 @@ public class Bishop extends Piece {
                             Canady_ChessJFX.resetBoard(bbb);
                         }
                     });
-                    bbb[this.x - i][this.y - i].setText("o");
+                    bbb[cx][cy].setText("o");
                 }
             }
         }
@@ -93,8 +125,24 @@ public class Bishop extends Piece {
                 int cy = this.y - i;
                 there = false;
                 for (Piece p : Canady_ChessJFX.wlist) {
-                    if (p.getX() == this.x + i && p.getY() == this.y - i) {
+                    if (p.getX() == cx && p.getY() == cy) {
                         if (!p.getColor().equals(this.color)) {
+                            bbb[cx][cy].setOnAction(new EventHandler<ActionEvent>() { //button action
+                                @Override
+                                public void handle(ActionEvent event) {
+                                    Piece e = null;
+                                    for (Piece p : Canady_ChessJFX.wlist) {
+                                        if (check(p, cx, cy)) {
+                                            e = p;
+                                        }
+                                    }
+                                    if (e != null) {
+                                        Canady_ChessJFX.wlist.remove(e);
+                                    }
+                                    move(cx, cy);
+                                    Canady_ChessJFX.resetBoard(bbb);
+                                }
+                            });
                             bbb[p.getX()][p.getY()].setTextFill(Color.GREEN);
                         }
                         i = this.y;
@@ -102,8 +150,24 @@ public class Bishop extends Piece {
                     }
                 }
                 for (Piece p : Canady_ChessJFX.blist) {
-                    if (p.getX() == this.x + i && p.getY() == this.y - i) {
+                    if (p.getX() == cx && p.getY() == cy) {
                         if (!p.getColor().equals(this.color)) {
+                            bbb[cx][cy].setOnAction(new EventHandler<ActionEvent>() { //button action
+                                @Override
+                                public void handle(ActionEvent event) {
+                                    Piece e = null;
+                                    for (Piece p : Canady_ChessJFX.blist) {
+                                        if (check(p, cx, cy)) {
+                                            e = p;
+                                        }
+                                    }
+                                    if (e != null) {
+                                        Canady_ChessJFX.blist.remove(e);
+                                    }
+                                    move(cx, cy);
+                                    Canady_ChessJFX.resetBoard(bbb);
+                                }
+                            });
                             bbb[p.getX()][p.getY()].setTextFill(Color.GREEN);
                         }
                         i = this.y;
@@ -118,7 +182,7 @@ public class Bishop extends Piece {
                             Canady_ChessJFX.resetBoard(bbb);
                         }
                     });
-                    bbb[this.x + i][this.y - i].setText("o");
+                    bbb[cx][cy].setText("o");
                 }
             }
         }
@@ -129,8 +193,24 @@ public class Bishop extends Piece {
                 int cy = this.y + i;
                 there = false;
                 for (Piece p : Canady_ChessJFX.wlist) {
-                    if (p.getX() == this.x - i && p.getY() == this.y + i) {
+                    if (p.getX() == cx && p.getY() == cy) {
                         if (!p.getColor().equals(this.color)) {
+                            bbb[cx][cy].setOnAction(new EventHandler<ActionEvent>() { //button action
+                                @Override
+                                public void handle(ActionEvent event) {
+                                    Piece e = null;
+                                    for (Piece p : Canady_ChessJFX.wlist) {
+                                        if (check(p, cx, cy)) {
+                                            e = p;
+                                        }
+                                    }
+                                    if (e != null) {
+                                        Canady_ChessJFX.wlist.remove(e);
+                                    }
+                                    move(cx, cy);
+                                    Canady_ChessJFX.resetBoard(bbb);
+                                }
+                            });
                             bbb[p.getX()][p.getY()].setTextFill(Color.GREEN);
                         }
                         i = 7 - this.y;
@@ -138,8 +218,24 @@ public class Bishop extends Piece {
                     }
                 }
                 for (Piece p : Canady_ChessJFX.blist) {
-                    if (p.getX() == this.x - i && p.getY() == this.y + i) {
+                    if (p.getX() == cx && p.getY() == cy) {
                         if (!p.getColor().equals(this.color)) {
+                            bbb[cx][cy].setOnAction(new EventHandler<ActionEvent>() { //button action
+                                @Override
+                                public void handle(ActionEvent event) {
+                                    Piece e = null;
+                                    for (Piece p : Canady_ChessJFX.blist) {
+                                        if (check(p, cx, cy)) {
+                                            e = p;
+                                        }
+                                    }
+                                    if (e != null) {
+                                        Canady_ChessJFX.blist.remove(e);
+                                    }
+                                    move(cx, cy);
+                                    Canady_ChessJFX.resetBoard(bbb);
+                                }
+                            });
                             bbb[p.getX()][p.getY()].setTextFill(Color.GREEN);
                         }
                         i = 7 - this.y;
@@ -154,7 +250,7 @@ public class Bishop extends Piece {
                             Canady_ChessJFX.resetBoard(bbb);
                         }
                     });
-                    bbb[this.x - i][this.y + i].setText("o");
+                    bbb[cx][cy].setText("o");
                 }
             }
         }
@@ -165,8 +261,24 @@ public class Bishop extends Piece {
                 int cy = this.y + i;
                 there = false;
                 for (Piece p : Canady_ChessJFX.wlist) {
-                    if (p.getX() == this.x + i && p.getY() == this.y + i) {
+                    if (p.getX() == cx && p.getY() == cy) {
                         if (!p.getColor().equals(this.color)) {
+                            bbb[cx][cy].setOnAction(new EventHandler<ActionEvent>() { //button action
+                                @Override
+                                public void handle(ActionEvent event) {
+                                    Piece e = null;
+                                    for (Piece p : Canady_ChessJFX.wlist) {
+                                        if (check(p, cx, cy)) {
+                                            e = p;
+                                        }
+                                    }
+                                    if (e != null) {
+                                        Canady_ChessJFX.wlist.remove(e);
+                                    }
+                                    move(cx, cy);
+                                    Canady_ChessJFX.resetBoard(bbb);
+                                }
+                            });
                             bbb[p.getX()][p.getY()].setTextFill(Color.GREEN);
                         }
                         i = 7 - this.y;
@@ -174,8 +286,24 @@ public class Bishop extends Piece {
                     }
                 }
                 for (Piece p : Canady_ChessJFX.blist) {
-                    if (p.getX() == this.x + i && p.getY() == this.y + i) {
+                    if (p.getX() == cx && p.getY() == cy) {
                         if (!p.getColor().equals(this.color)) {
+                            bbb[cx][cy].setOnAction(new EventHandler<ActionEvent>() { //button action
+                                @Override
+                                public void handle(ActionEvent event) {
+                                    Piece e = null;
+                                    for (Piece p : Canady_ChessJFX.blist) {
+                                        if (check(p, cx, cy)) {
+                                            e = p;
+                                        }
+                                    }
+                                    if (e != null) {
+                                        Canady_ChessJFX.blist.remove(e);
+                                    }
+                                    move(cx, cy);
+                                    Canady_ChessJFX.resetBoard(bbb);
+                                }
+                            });
                             bbb[p.getX()][p.getY()].setTextFill(Color.GREEN);
                         }
                         i = 7 - this.y;
@@ -190,7 +318,7 @@ public class Bishop extends Piece {
                             Canady_ChessJFX.resetBoard(bbb);
                         }
                     });
-                    bbb[this.x + i][this.y + i].setText("o");
+                    bbb[cx][cy].setText("o");
                 }
             }
         }
