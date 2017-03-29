@@ -56,6 +56,7 @@ public class Pawn extends Piece {
                 for (Piece p : Canady_ChessJFX.wlist) {
                     if (check(p, this.x + 1, this.y)) {
                         m = false;
+                        m1 = false;
                     }
                     if (check(p, this.x + 2, this.y)) {
                         m1 = false;
@@ -64,6 +65,7 @@ public class Pawn extends Piece {
                 for (Piece p : Canady_ChessJFX.blist) {
                     if (check(p, this.x + 1, this.y)) {
                         m = false;
+                        m1 = false;
                     }
                     if (check(p, this.x + 2, this.y)) {
                         m1 = false;
@@ -118,6 +120,50 @@ public class Pawn extends Piece {
                     bbb[this.x + 1][this.y].setText("o");
                 }
             }
+            for (Piece p : Canady_ChessJFX.blist) {
+                if (check(p, this.x + 1, this.y - 1)) {
+                    int cx = this.x + 1;
+                    int cy = this.y - 1;
+                    bbb[cx][cy].setTextFill(Color.GREEN);
+                    bbb[cx][cy].setOnAction(new EventHandler<ActionEvent>() { //button action
+                        @Override
+                        public void handle(ActionEvent event) {
+                            Piece e = null;
+                            for (Piece p : Canady_ChessJFX.blist) {
+                                if (check(p, cx, cy)) {
+                                    e = p;
+                                }
+                            }
+                            if (e != null) {
+                                Canady_ChessJFX.blist.remove(e);
+                            }
+                            move(cx, cy);
+                            Canady_ChessJFX.resetBoard(bbb);
+                        }
+                    });
+                }
+                if (check(p, this.x + 1, this.y + 1)) {
+                    int cx = this.x + 1;
+                    int cy = this.y + 1;
+                    bbb[cx][cy].setTextFill(Color.GREEN);
+                    bbb[cx][cy].setOnAction(new EventHandler<ActionEvent>() { //button action
+                        @Override
+                        public void handle(ActionEvent event) {
+                            Piece e = null;
+                            for (Piece p : Canady_ChessJFX.blist) {
+                                if (check(p, cx, cy)) {
+                                    e = p;
+                                }
+                            }
+                            if (e != null) {
+                                Canady_ChessJFX.blist.remove(e);
+                            }
+                            move(cx, cy);
+                            Canady_ChessJFX.resetBoard(bbb);
+                        }
+                    });
+                }
+            }
 
         } else if (this.x == 6) {
             boolean m = true;
@@ -125,6 +171,7 @@ public class Pawn extends Piece {
             for (Piece p : Canady_ChessJFX.wlist) {
                 if (check(p, this.x - 1, this.y)) {
                     m = false;
+                    m1 = false;
                 }
                 if (check(p, this.x - 2, this.y)) {
                     m1 = false;
@@ -185,6 +232,50 @@ public class Pawn extends Piece {
                     }
                 });
                 bbb[this.x - 1][this.y].setText("o");
+            }
+            for (Piece p : Canady_ChessJFX.wlist) {
+                if (check(p, this.x - 1, this.y - 1)) {
+                    int cx = this.x - 1;
+                    int cy = this.y - 1;
+                    bbb[cx][cy].setTextFill(Color.GREEN);
+                    bbb[cx][cy].setOnAction(new EventHandler<ActionEvent>() { //button action
+                        @Override
+                        public void handle(ActionEvent event) {
+                            Piece e = null;
+                            for (Piece p : Canady_ChessJFX.wlist) {
+                                if (check(p, cx, cy)) {
+                                    e = p;
+                                }
+                            }
+                            if (e != null) {
+                                Canady_ChessJFX.wlist.remove(e);
+                            }
+                            move(cx, cy);
+                            Canady_ChessJFX.resetBoard(bbb);
+                        }
+                    });
+                }
+                if (check(p, this.x - 1, this.y + 1)) {
+                    int cx = this.x - 1;
+                    int cy = this.y + 1;
+                    bbb[cx][cy].setTextFill(Color.GREEN);
+                    bbb[cx][cy].setOnAction(new EventHandler<ActionEvent>() { //button action
+                        @Override
+                        public void handle(ActionEvent event) {
+                            Piece e = null;
+                            for (Piece p : Canady_ChessJFX.wlist) {
+                                if (check(p, cx, cy)) {
+                                    e = p;
+                                }
+                            }
+                            if (e != null) {
+                                Canady_ChessJFX.wlist.remove(e);
+                            }
+                            move(cx, cy);
+                            Canady_ChessJFX.resetBoard(bbb);
+                        }
+                    });
+                }
             }
         }
     }
